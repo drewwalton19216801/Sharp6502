@@ -80,11 +80,6 @@
     public static class Memory
     {
         /// <summary>
-        /// The memory lock.
-        /// </summary>
-        public static object memLock = new();
-
-        /// <summary>
         /// The data.
         /// </summary>
         /// <remarks>

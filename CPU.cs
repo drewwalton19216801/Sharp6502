@@ -123,12 +123,7 @@
         /// <returns>The data.</returns>
         public static byte Read(ushort address)
         {
-            byte data;
-            lock (Memory.memLock)
-            {
-                data = Memory.Read(address);
-            }
-            return data;
+            return Memory.Read(address);
         }
 
         /// <summary>
@@ -148,10 +143,7 @@
         /// <param name="data">The data to write.</param>
         public static void Write(ushort address, byte data)
         {
-            lock (Memory.memLock) 
-            { 
-                Memory.Write(address, data);
-            }
+            Memory.Write(address, data);
         }
 
         /// <summary>
@@ -333,7 +325,6 @@
         /// </summary>
         public static void Reset()
         {
-            Console.WriteLine("Resetting CPU.");
             Registers.A = 0;
             Registers.X = 0;
             Registers.Y = 0;
